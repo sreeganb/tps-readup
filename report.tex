@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{amsmath}
+
+\title{Postdoc work preparation}
+\date{\today}
+\begin{document}
+\maketitle
+%
+\section{Recent developments in methods for identifying reaction coordinates}
+\begin{itemize}
+\item Straightforward MD simulations sample stable regions
+\item More interesting transition regions are rarely visited
+\item Various enhanced sampling methods are used for studying these rare events such as 
+umbrella sampling, metadynamics, orthogonal space sampling and constrained dynamics. For
+improved sampling of regions other than stable basins.  
+\item These methods rely on application of a biasing potential on one or a small set of 
+coordinates, usually termed \emph{reaction coordinates} or \emph{order parameters},
+along which the progress of the transition can be quantified to certain extent. 
+\item Two different views: reaction coordinates should reveal the underlying mechanism of the process
+under study and reaction coordinates should provide a reduced description of a given process that preserves
+some geometric or informatic metric of the configuration space of the system. 
+\item Free energy related definition and committor are the prominent examples of the first group. 
+Committor is gaining popularity as the measure of the quality of reaction coordinates due to its clear
+and specific relationship with reaction dynamics. 
+\item Existing methods for finding the reaction coordinates are heavily trial and error in
+nature: a structural coordinate is selected bason on chemical or phyiscal intuition,
+then biased MD is performed along the proposed coordinate to collect necessary information
+which is used to judge whether the proposed coordinate is reaction coordinate or not. 
+\end{itemize}
+Ok, this paper turned out to be a dud actually. Not very useful at all, just gave some 
+really broad overview of the field. Time to trust the big guns in the field. 
+
+\section{Transition path sampling}
+This section is a summary of my reading of the book chapter Transition path sampling
+written by Christoph Dellago, Peter Bolhuis and Phillip Geissler in \emph{Advances in chemical physics, 123:1-86}.
+One example for importance of rare event sampling.
+\begin{itemize}
+\item A specific water molecule in liquid water has a lifetime of about 10 hours
+before it dissociates to form hydronium and hydroxide ions.
+\item In a system of 100 water molecules, there will only be a few dissociation events occuring every hour.
+\item Simulation of molecular motions proceeds in time steps of roughly $1\;fs$, this means that 
+$10^8$ timesteps would be required to observe just one such event. Such calculations are beyond capabilities of 
+the fastest available computers today and in the foreseeable future. This is an example of 
+simulating an extremely rare event. 
+\end{itemize} 
+\end{document}
