@@ -44,4 +44,98 @@ $10^8$ timesteps would be required to observe just one such event. Such calculat
 the fastest available computers today and in the foreseeable future. This is an example of 
 simulating an extremely rare event. 
 \end{itemize} 
+
+\begin{itemize}
+\item Calulation of free energies using the transition path sampling method. This is supposed to be done with 
+trajectories that were thrown away. 
+\end{itemize}
+
+\section{Learning CHARMM}
+CHARMM is a molecular mechanics software developed at Harvard. Here I am going to use it to 
+study enzyme catalysis mechanisms based on the transition path sampling method. Here is a summary of what
+I have learnt so far about using charmm.
+
+\begin{itemize}
+	\item The pdb file cannot be read into CHARMM just like that. It needs some modifications. There is a script 
+	called efixpdb.awk that used awk command line tool to edit the pdb file into a format that can be 
+	read by CHARMM. 
+	\item This script requires the identification and understanding of the system and subsystems at hand. 
+	For example, the protein and the complex that its binding to, the solvent around the protein, and so on.
+\end{itemize}
+
+\section{BOLAS method for calculation of the free energy profile}
+
+Transition path sampling does not provide a means for the sampling of equilibrium distribution of the 
+free energy landscape. In order to sample the equilibrium distribution of trajectories, the ones that 
+are thrown away needs to be sampled. 
+
+
+\section{TPS}
+A molecular dynamics trajectory of length $\mathcal{T}$ can be discretized 
+for convenience as a time ordered sequence of states as
+\begin{equation}
+x(\mathcal{T}) = \{x_0,x_{\Delta t},x_{2\Delta t},\ldots x_{\mathcal{T}}\},
+\end{equation}
+with a time step of $\Delta t$ and $x_{i\Delta t}$ is a complete snaphot of the
+system at time $i\Delta t$. For a system evolving under Newtonian dynamics, $x$
+represents the positions and momentums of all the constituent particles. These 
+discrete states are also known as time slices. 
+
+ The probability to observe a particular trajectory $x(\mathcal{T})$ in phase space depends on the 
+ initial conditions and the type of time evolution dynamics. In case of Markovian dynamics, the 
+ probability to go from state $x_t$ to $x_{t+\Delta t}$ depends only on the 
+ state $x_t$ and not on the entire history of the trajectory. For such dynamics, the 
+ path probability can be written as a product of single time step transition probabilities
+ $p(x_t\rightarrow x_{t+\Delta t})$,
+ \begin{equation}
+\mathcal{P}[x(\mathcal{T})] = \rho(x_0)\prod^{(\mathcal{T}/\Delta t)-1}_{i=0}p(x_i\rightarrow x_{(i+1)\Delta t}).
+ \end{equation}
+ $\rho(x_0)$ is the probability distribution of the initial conditions. The transition probability
+ is different for deterministic and stochastic dynamics.  
+\subsection{Reactive pathways}
+Restrictions need to be placed for studying the reactive pathways. The path probability for 
+reactive trajectories is defined as
+\begin{equation}
+\mathcal{P}_{AB}[x(\mathcal{T})]= h_A(x_0)\mathcal{P}[x(\mathcal{T})]h_B(x_{\mathcal{T}})/Z_{AB}(\mathcal{T})
+\end{equation}
+$h_{A/B}(x)$ are characteristic functions defined as
+\[
+ h_{A,B}(x) = 
+  \begin{cases} 
+   1 & \text{if } x \in A,B \\
+   0 & \text{if } x \not\in A,B
+  \end{cases}
+\]
+Since the path probability is restricted to reactive trajectories, the 
+function needs to be renormalized for which $Z_{AB}(\mathcal{T})$ is used
+\begin{equation}
+Z_{AB}(\mathcal{T}) \equiv \int Dx(\mathcal{T})h_A(x_0)\mathcal{P}[x(\mathcal{T})]
+h_B(x_{\mathcal{T}})
+\end{equation}
+where the notation $\int Dx(\mathcal{T})$ from the path integral theory is 
+\begin{equation}
+\int Dx(\mathcal{T}) \equiv \int\ldots\int dx_0dx_{\Delta t}dx_{2\Delta t}\ldots dx_{\mathcal{T}}
+\end{equation}
+The transition path ensemble is a complete statistical description of all possible pathways connecting reactants with products. 
+\subsection{Initial conditions}
+In a canonical ensemble the distribution of the initial conditions
+at temperature $T$ is 
+\begin{align}
+\rho(x) &= \exp(-\beta\mathcal{H}(x))/Z \\
+Z(\beta) &= \int dx\exp(-\beta\mathcal{H}(x))
+\end{align} 
+\subsection{Newtonian dynamics}
+Hamilton equations of motion are given by
+\begin{align}
+\dot{r} &=\frac{\partial \mathcal{H}(r,p)}{\partial p} \\
+\dot{p} &=-\frac{\partial\mathcal{H}(r,p)}{\partial r}
+\end{align}
+Since Newtonian dynamics is deterministic, the state of the system is entirely
+determined by the initial state $x_0$ at time $t=0$. 
+$x=\{r,p\}$, collectively represents the positions and momenta of the system. 
+For such deterministic dynamics, the transition probability can be written in terms of the Dirac delta function
+
+\begin{equation}
+p(x_t\rightarrow x_{t+\Delta t}) = \delta(x_{t+\Delta t}-\phi_{\Delta t}(x_t))
+\end{equation}
 \end{document}
