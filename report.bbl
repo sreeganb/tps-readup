@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{Brotzakis19JChemPhys151p174111}
+Z.~Faidon Brotzakis and Peter~G. Bolhuis.
+\newblock Approximating free energy and committor landscapes in standard
+  transition path sampling using virtual interface exchange.
+\newblock {\em J. Chem. Phys.}, 151(17):174111, 2019.
+
+\bibitem{Frenkel17571}
+Daan Frenkel.
+\newblock Speed-up of monte carlo simulations by sampling of rejected states.
+\newblock {\em Proc. Nat. Acad. Sci.}, 101(51):17571--17575, 2004.
+
+\end{thebibliography}

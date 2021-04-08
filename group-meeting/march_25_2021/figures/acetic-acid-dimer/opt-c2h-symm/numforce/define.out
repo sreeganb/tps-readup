@@ -1,0 +1,387 @@
+
+ define (c-18-7) : TURBOMOLE rev. V7.4.1 (b987a8a8) compiled 15 Oct 2019 at 12:03:25
+ Copyright (C) 2019 TURBOMOLE GmbH, Karlsruhe
+
+
+    2020-04-19 14:07:49.491 
+
+                    HOST NAME = c-18-7
+             OPERATING SYSTEM = unix
+   STANDARD BASIS SET LIBRARY = /sopt/TURBOMOLE/7.4.1-official/basen/
+  ALTERNATE BASIS SET LIBRARY = /sopt/TURBOMOLE/7.4.1-official/basold/
+ LIBRARY FOR RI-J  BASIS SETS = /sopt/TURBOMOLE/7.4.1-official/jbasen/
+ LIBRARY FOR RI-JK BASIS SETS = /sopt/TURBOMOLE/7.4.1-official/jkbasen/
+ LIBRARY FOR RIMP2/RICC2 SETS = /sopt/TURBOMOLE/7.4.1-official/cbasen/
+ LIBRARY FOR RIR12 BASIS SETS = /sopt/TURBOMOLE/7.4.1-official/cabasen/
+ LIBRARY FOR OEP   BASIS SETS = /sopt/TURBOMOLE/7.4.1-official/xbasen/
+            STRUCTURE LIBRARY = /sopt/TURBOMOLE/7.4.1-official/structures/
+ 
+
+ ***********************************************************
+ *                                                         *
+ *                       D E F I N E                       *
+ *                                                         *
+ *         TURBOMOLE'S  INTERACTIVE  INPUT  PROGRAM        *
+ *                                                         *
+ *  Quantum Chemistry Group       University of Karlsruhe  *
+ *                                                         *
+ ***********************************************************
+
+
+ FILE control ALREADY EXISTS 
+ I WILL PLUG IN THE NEW DATA.
+
+ DATA WILL BE TAKEN FROM control BY DEFAULT
+ 
+ INPUT TITLE 
+
+ SYMMETRY c2h  AND CARTESIAN COORDINATES FOR  16 ATOMS 
+ HAVE BEEN READ FROM THE DEFAULT INPUT FILE control . 
+ DEFINITIONS OF INTERNAL COORDINATES HAVE  N O T  BEEN READ. 
+ SPECIFICATION OF BOND TOPOLOGY HAS BEEN READ. 
+ DO YOU WANT TO CHANGE THE GEOMETRY DATA ?  DEFAULT=n  GOBACK=&
+
+
+ SPECIFICATION OF MOLECULAR GEOMETRY ( #ATOMS=16    SYMMETRY=c2h )
+ YOU MAY USE ONE OF THE FOLLOWING COMMANDS : 
+ sy <group> <eps> : DEFINE MOLECULAR SYMMETRY (default for eps=3d-1)
+ desy <eps>       : DETERMINE MOLECULAR SYMMETRY AND ADJUST 
+                     COORDINATES (default for eps=1d-6)
+ susy             : ADJUST COORDINATES FOR SUBGROUPS
+ ai               : ADD ATOMIC COORDINATES INTERACTIVELY
+ a <file>         : ADD ATOMIC COORDINATES FROM FILE <file>
+ aa <file>        : ADD ATOMIC COORDINATES IN ANGSTROEM UNITS FROM FILE <file>
+ sub              : SUBSTITUTE AN ATOM BY A GROUP OF ATOMS
+ i                : INTERNAL COORDINATE MENU 
+ ired             : REDUNDANT INTERNAL COORDINATES
+ red_info         : DISPLAY REDUNDANT INTERNAL COORDINATES
+ ff               : UFF-FORCEFIELD CALCULATION
+ m                : MANIPULATE GEOMETRY
+ frag             : Define Fragments for BSSE calculation
+ w <file>         : WRITE MOLECULAR COORDINATES TO FILE <file> 
+ r <file>         : RELOAD ATOMIC AND INTERNAL COORDINATES FROM FILE <file>
+ name             : CHANGE ATOMIC IDENTIFIERS 
+ del              : DELETE ATOMS 
+ dis              : DISPLAY MOLECULAR GEOMETRY 
+ banal            : CARRY OUT BOND ANALYSIS 
+ *                : TERMINATE MOLECULAR GEOMETRY SPECIFICATION 
+                     AND WRITE GEOMETRY DATA TO CONTROL FILE 
+
+ IF YOU APPEND A QUESTION MARK TO ANY COMMAND AN EXPLANATION
+ OF THAT COMMAND MAY BE GIVEN 
+
+
+ symmetry group of the molecule :   c1 
+
+ the group has the following generators :
+   c1(z)
+
+    1 symmetry operations found
+
+ SPECIFICATION OF MOLECULAR GEOMETRY ( #ATOMS=16    SYMMETRY=c1  )
+ YOU MAY USE ONE OF THE FOLLOWING COMMANDS : 
+ sy <group> <eps> : DEFINE MOLECULAR SYMMETRY (default for eps=3d-1)
+ desy <eps>       : DETERMINE MOLECULAR SYMMETRY AND ADJUST 
+                     COORDINATES (default for eps=1d-6)
+ susy             : ADJUST COORDINATES FOR SUBGROUPS
+ ai               : ADD ATOMIC COORDINATES INTERACTIVELY
+ a <file>         : ADD ATOMIC COORDINATES FROM FILE <file>
+ aa <file>        : ADD ATOMIC COORDINATES IN ANGSTROEM UNITS FROM FILE <file>
+ sub              : SUBSTITUTE AN ATOM BY A GROUP OF ATOMS
+ i                : INTERNAL COORDINATE MENU 
+ ired             : REDUNDANT INTERNAL COORDINATES
+ red_info         : DISPLAY REDUNDANT INTERNAL COORDINATES
+ ff               : UFF-FORCEFIELD CALCULATION
+ m                : MANIPULATE GEOMETRY
+ frag             : Define Fragments for BSSE calculation
+ w <file>         : WRITE MOLECULAR COORDINATES TO FILE <file> 
+ r <file>         : RELOAD ATOMIC AND INTERNAL COORDINATES FROM FILE <file>
+ name             : CHANGE ATOMIC IDENTIFIERS 
+ del              : DELETE ATOMS 
+ dis              : DISPLAY MOLECULAR GEOMETRY 
+ banal            : CARRY OUT BOND ANALYSIS 
+ *                : TERMINATE MOLECULAR GEOMETRY SPECIFICATION 
+                     AND WRITE GEOMETRY DATA TO CONTROL FILE 
+
+ IF YOU APPEND A QUESTION MARK TO ANY COMMAND AN EXPLANATION
+ OF THAT COMMAND MAY BE GIVEN 
+
+
+ YOU DID NOT YET DEFINE ANY INTERNAL COORDINATES !
+
+ ONLY AN INCOMPLETE SET OF   -1 INTERNALS SPECIFIED
+ RECOMMENDATION: USE CARTESIAN COORDINATES (ENTER no BELOW)
+ FOR ANY OTHER ANSWER YOU RETURN TO THE PREVIOUS MENU AGAIN
+
+ IF YOU DO NOT WANT TO USE INTERNAL COORDINATES ENTER  no
+
+
+ GEOMETRY DATA WILL BE WRITTEN TO FILE coord
+
+
+ ATOMIC ATTRIBUTE DATA (BASES,CHARGES,MASSES,ECPS) HAVE BEEN
+ TAKEN FROM THE DEFAULT INPUT FILE control.
+ DO YOU WANT TO CHANGE THESE DATA ? DEFAULT=n  GOBACK=&
+
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    c        4     46     31   def2-TZVPP   [5s3p2d1f|11s6p2d1f]
+    h        8     16     14   def2-TZVPP   [3s2p1d|5s2p1d]
+    o        4     46     31   def2-TZVPP   [5s3p2d1f|11s6p2d1f]
+   ---------------------------------------------------------------------------
+   total:   16    496    360
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :   48
+   total number of contracted shells         :  136
+   total number of cartesian basis functions :  408
+   total number of SCF-basis functions       :  360
+
+
+              ATOMIC COORDINATES              ATOM SHELLS CHARGE PSEUDO MASS
+     6.19523026    1.76411488    0.00000000    c     11      6.     0 12.011
+     3.45579894    1.02070718    0.00000000    c     11      6.     0 12.011
+     7.12365163    0.96968289   -1.66166115    h      6      1.     0  1.008
+     7.12365163    0.96968289    1.66166115    h      6      1.     0  1.008
+     6.36946141    3.80953431    0.00000000    h      6      1.     0  1.008
+     3.09891562   -1.44447825    0.00000000    o     11      8.     0 15.999
+     1.73413625    2.58030095    0.00000000    o     11      8.     0 15.999
+     1.23165949   -1.84598387    0.00000000    h      6      1.     0  1.008
+    -7.12365163   -0.96968289   -1.66166115    h      6      1.     0  1.008
+    -3.09891562    1.44447825    0.00000000    o     11      8.     0 15.999
+    -3.45579894   -1.02070718    0.00000000    c     11      6.     0 12.011
+    -6.19523026   -1.76411488    0.00000000    c     11      6.     0 12.011
+    -7.12365163   -0.96968289    1.66166115    h      6      1.     0  1.008
+    -1.23165949    1.84598387    0.00000000    h      6      1.     0  1.008
+    -6.36946141   -3.80953431    0.00000000    h      6      1.     0  1.008
+    -1.73413625   -2.58030095    0.00000000    o     11      8.     0 15.999
+ 
+
+ we will work with the  1s 3p 5d  7f
+
+ SYMMETRY HAS BEEN CHANGED
+
+
+ there are 1 real representations :   a   
+
+ OCCUPATION NUMBER & MOLECULAR ORBITAL DEFINITION MENU 
+
+ CHOOSE COMMAND 
+ infsao     : OUTPUT SAO INFORMATION 
+ atb        : Switch for writing MOs in ASCII or binary format
+ eht        : PROVIDE MOS && OCCUPATION NUMBERS FROM EXTENDED HUECKEL GUESS 
+ use <file> : SUPPLY MO INFORMATION USING DATA FROM <file> 
+ man        : MANUAL SPECIFICATION OF OCCUPATION NUMBERS 
+ hcore      : HAMILTON CORE GUESS FOR MOS
+ flip       : FLIP SPIN OF A SELECTED ATOM
+ &          : MOVE BACK TO THE ATOMIC ATTRIBUTES MENU
+ THE COMMANDS  use  OR  eht  OR  *  OR q(uit) TERMINATE THIS MENU !!! 
+ FOR EXPLANATIONS APPEND A QUESTION MARK (?) TO ANY COMMAND 
+
+
+WARNING! There is no check, whether you use the same basis in ../control and in control.
+
+ atomic element                  c o o r d i n a t e s
+ index  symbol             x               y               z
+     1   c           6.1952302630    1.7641148776    0.0000000000
+     2   c           3.4557989390    1.0207071848    0.0000000000
+     3   h           7.1236516331    0.9696828878   -1.6616611549
+     4   h           7.1236516331    0.9696828878    1.6616611549
+     5   h           6.3694614128    3.8095343115    0.0000000000
+     6   o           3.0989156238   -1.4444782544    0.0000000000
+     7   o           1.7341362532    2.5803009522    0.0000000000
+     8   h           1.2316594922   -1.8459838711    0.0000000000
+     9   h          -7.1236516331   -0.9696828878   -1.6616611549
+    10   o          -3.0989156238    1.4444782544    0.0000000000
+    11   c          -3.4557989390   -1.0207071848    0.0000000000
+    12   c          -6.1952302630   -1.7641148776    0.0000000000
+    13   h          -7.1236516331   -0.9696828878    1.6616611549
+    14   h          -1.2316594922    1.8459838711    0.0000000000
+    15   h          -6.3694614128   -3.8095343115    0.0000000000
+    16   o          -1.7341362532   -2.5803009522    0.0000000000
+ TO CONTINUE, ENTER <return>
+
+ symmetry group of the molecule :   c2h
+
+ the group has the following generators :
+   c2(z)
+   mirror plane sigma(xy)
+
+    4 symmetry operations found
+
+ there are 4 real representations :   ag   bg   au   bu  
+
+ maximum number of shells which are related by symmetry :  4
+
+
+    mo occupation :
+   irrep   mo's   occupied
+    ag     118       13
+    bg      62        3
+    au      62        3
+    bu     118       13
+ 
+ number of basis functions   :                    360
+ number of occupied orbitals :                     32
+ 
+
+ reading orbital data $scfmo  from file ../mos
+ orbital characterization : scfconv=8
+
+ OLD ORIENTATION MATRIX 
+        0.961768       -0.273867        0.000000
+        0.273867        0.961768        0.000000
+        0.000000        0.000000       -1.000000
+
+
+
+ NEW ORIENTATION MATRIX 
+        0.961768       -0.273867        0.000000
+        0.273867        0.961768        0.000000
+        0.000000        0.000000       -1.000000
+
+
+
+ ROOT MEAN SQUARE DEVIATION BETWEEN OLD AND NEW GEOMETRY IS 0.1523E-12
+
+
+ TRANSFORMATION MATRIX OLD => NEW 
+        1.000000        0.000000       -0.000000
+        0.000000        1.000000       -0.000000
+       -0.000000       -0.000000        1.000000
+
+
+ TRANSFORMATION MATRIX FOR D-TYPE FUNCTIONS 
+  1.0000 -0.0000 -0.0000 -0.0000  0.0000
+ -0.0000  1.0000  0.0000 -0.0000 -0.0000
+ -0.0000  0.0000  1.0000 -0.0000  0.0000
+ -0.0000 -0.0000 -0.0000  1.0000  0.0000
+  0.0000 -0.0000  0.0000 -0.0000  1.0000
+ 
+ TRANSFORMATION MATRIX FOR F-TYPE FUNCTIONS 
+  1.0000 -0.0000 -0.0000 -0.0000  0.0000 -0.0000 -0.0000
+  0.0000  1.0000  0.0000 -0.0000 -0.0000  0.0000  0.0000
+  0.0000  0.0000  1.0000 -0.0000  0.0000  0.0000 -0.0000
+ -0.0000 -0.0000 -0.0000  1.0000  0.0000  0.0000  0.0000
+  0.0000 -0.0000  0.0000 -0.0000  1.0000 -0.0000  0.0000
+ -0.0000  0.0000  0.0000  0.0000 -0.0000  1.0000  0.0000
+ -0.0000  0.0000 -0.0000  0.0000  0.0000 -0.0000  1.0000
+ 
+
+    sao information (actual symmetry) :
+   irrep   sao's
+    a      360
+
+ TRANSFORMING MOLECULAR ORBITALS : c2h  --> c1  
+
+
+ CALCULATING COMPLETE OVERLAP MATRIX 
+
+
+ EFFECTIVE NUMBER OF NON-VANISHING CARTESIAN 
+ OVERLAP MATRIX ELEMENTS   :   64033
+
+
+ orbitals $scfmo will be written to file mos
+
+ ADJUSTING DATA GROUP  $drvopt  FOR CURRENT REQUIREMENTS
+
+ FORCE CONSTANT INITIALIZATION $forceinit WILL BE ENABLED
+
+ DO YOU WANT TO DELETE DATA GROUPS LIKE
+     $dipole
+ LEFT OVER FROM PREVIOUS CALCULATIONS ? DEFAULT(n)
+
+
+    mo occupation :
+   irrep   mo's   occupied
+    a      360       32
+ 
+ number of basis functions   :                    360
+ number of occupied orbitals :                     32
+ 
+ GENERAL MENU : SELECT YOUR TOPIC 
+ scf    : SELECT NON-DEFAULT SCF PARAMETER 
+ mp2    : OPTIONS AND DATA GROUPS FOR rimp2 and mpgrad
+ cc     : OPTIONS AND DATA GROUPS FOR ricc2
+ pnocc  : OPTIONS AND DATA GROUPS FOR pnoccsd
+ ex     : EXCITED STATE AND RESPONSE OPTIONS
+ prop   : SELECT TOOLS FOR SCF-ORBITAL ANALYSIS 
+ drv    : SELECT NON-DEFAULT INPUT PARAMETER FOR EVALUATION
+          OF ANALYTICAL ENERGY DERIVATIVES 
+          (GRADIENTS, FORCE CONSTANTS) 
+ rex    : SELECT OPTIONS FOR GEOMETRY UPDATES USING RELAX
+ stp    : SELECT NON-DEFAULT STRUCTURE OPTIMIZATION PARAMETER
+ e      : DEFINE EXTERNAL ELECTROSTATIC FIELD 
+ dft    : DFT Parameters 
+ ri     : RI Parameters 
+ rijk   : RI-JK-HF Parameters 
+ rirpa  : RIRPA Parameters 
+ gw     : OPTIONS AND DATA GROUPS FOR GW (escf) 
+ senex  : seminumeric exchange parameters 
+ hybno  : hybrid Noga/Diag parameters
+ dsp    : DFT dispersion correction
+ trunc  : USE TRUNCATED AUXBASIS DURING ITERATIONS 
+ marij  : MULTIPOLE ACCELERATED RI-J 
+ dis    : DISPLAY MOLECULAR GEOMETRY 
+ list   : LIST OF CONTROL FILE 
+
+ &      : GO BACK TO OCCUPATION/ORBITAL ASSIGNMENT MENU
+ * or q : END OF DEFINE SESSION 
+
+ GENERAL MENU : SELECT YOUR TOPIC 
+ scf    : SELECT NON-DEFAULT SCF PARAMETER 
+ mp2    : OPTIONS AND DATA GROUPS FOR rimp2 and mpgrad
+ cc     : OPTIONS AND DATA GROUPS FOR ricc2
+ pnocc  : OPTIONS AND DATA GROUPS FOR pnoccsd
+ ex     : EXCITED STATE AND RESPONSE OPTIONS
+ prop   : SELECT TOOLS FOR SCF-ORBITAL ANALYSIS 
+ drv    : SELECT NON-DEFAULT INPUT PARAMETER FOR EVALUATION
+          OF ANALYTICAL ENERGY DERIVATIVES 
+          (GRADIENTS, FORCE CONSTANTS) 
+ rex    : SELECT OPTIONS FOR GEOMETRY UPDATES USING RELAX
+ stp    : SELECT NON-DEFAULT STRUCTURE OPTIMIZATION PARAMETER
+ e      : DEFINE EXTERNAL ELECTROSTATIC FIELD 
+ dft    : DFT Parameters 
+ ri     : RI Parameters 
+ rijk   : RI-JK-HF Parameters 
+ rirpa  : RIRPA Parameters 
+ gw     : OPTIONS AND DATA GROUPS FOR GW (escf) 
+ senex  : seminumeric exchange parameters 
+ hybno  : hybrid Noga/Diag parameters
+ dsp    : DFT dispersion correction
+ trunc  : USE TRUNCATED AUXBASIS DURING ITERATIONS 
+ marij  : MULTIPOLE ACCELERATED RI-J 
+ dis    : DISPLAY MOLECULAR GEOMETRY 
+ list   : LIST OF CONTROL FILE 
+
+ &      : GO BACK TO OCCUPATION/ORBITAL ASSIGNMENT MENU
+ * or q : END OF DEFINE SESSION 
+
+
+ ***********************************************************
+ *                                                         *
+ *                       e n d   o f                       *
+ *                       D E F I N E                       *
+ *                                                         *
+ ***********************************************************
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time :   0.52 seconds
+         total wall-time :   0.53 seconds
+    ------------------------------------------------------------------------
+
+   ****  define : all done  ****
+
+
+    2020-04-19 14:07:50.016 
+

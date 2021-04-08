@@ -1,0 +1,13 @@
+-------------- slurm.epilog ---------------
+Job ID:    1834858
+User:      sreeganb
+Group:     furche
+Job Name:  acetic-acid-dimer
+Partition: scavenge
+QOS:       scavenger 
+Account:   furche
+Reason:    None,c-18-7
+Nodelist:  c-18-7
+Command:   /DFS-L/DATA/furche/sreeganb/acetate-xps/acetic-acid-dimer/opt-tzvpp/run_slurm.turbomole
+WorkDir:   /DFS-L/DATA/furche/sreeganb/acetate-xps/acetic-acid-dimer/opt-tzvpp
+BatchHost: c-18-7

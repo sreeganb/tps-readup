@@ -1,0 +1,52 @@
+$vibrational spectrum
+#  mode     symmetry     wave number   IR intensity    selection rules
+#                         cm**(-1)        km/mol         IR     RAMAN
+     1                       -0.00         0.00000        -       -
+     2                       -0.00         0.00000        -       -
+     3                        0.00         0.00000        -       -
+     4                        0.00         0.00000        -       -
+     5                        0.00         0.00000        -       -
+     6                        0.00         0.00000        -       -
+     7        au             27.53         3.37299       YES     NO
+     8        bg             36.07         0.00000       NO      YES
+     9        au             67.36         1.89583       YES     NO
+    10        au             78.43         0.03862       YES     NO
+    11        bg            127.15         0.00000       NO      YES
+    12        ag            164.29         0.00000       NO      YES
+    13        bu            189.88        33.67856       YES     NO
+    14        ag            193.49         0.00000       NO      YES
+    15        ag            431.22         0.00000       NO      YES
+    16        bu            483.32        66.77801       YES     NO
+    17        au            592.95         0.64570       YES     NO
+    18        bg            601.25         0.00000       NO      YES
+    19        ag            621.35         0.00000       NO      YES
+    20        bu            633.88        37.61488       YES     NO
+    21        ag            900.76         0.00000       NO      YES
+    22        bu            906.08         7.49464       YES     NO
+    23        bg           1014.64         0.00000       NO      YES
+    24        ag           1028.61         0.00000       NO      YES
+    25        bu           1032.26        30.20239       YES     NO
+    26        au           1050.40       160.06502       YES     NO
+    27        bg           1067.86         0.00000       NO      YES
+    28        au           1068.26         2.89852       YES     NO
+    29        ag           1319.50         0.00000       NO      YES
+    30        bu           1337.14       365.88890       YES     NO
+    31        bu           1398.42        73.54488       YES     NO
+    32        ag           1400.10         0.00000       NO      YES
+    33        bu           1467.21        95.36631       YES     NO
+    34        ag           1470.93         0.00000       NO      YES
+    35        bu           1478.92        75.66171       YES     NO
+    36        bg           1487.07         0.00000       NO      YES
+    37        au           1487.14        16.32603       YES     NO
+    38        ag           1499.24         0.00000       NO      YES
+    39        ag           1685.09         0.00000       NO      YES
+    40        bu           1744.38       768.06772       YES     NO
+    41        ag           2904.83         0.00000       NO      YES
+    42        bu           3035.09      3763.29263       YES     NO
+    43        bu           3052.10         1.11586       YES     NO
+    44        ag           3052.33         0.00000       NO      YES
+    45        bg           3112.82         0.00000       NO      YES
+    46        au           3112.84         9.02695       YES     NO
+    47        ag           3166.93         0.00000       NO      YES
+    48        bu           3166.95        11.20006       YES     NO
+$end

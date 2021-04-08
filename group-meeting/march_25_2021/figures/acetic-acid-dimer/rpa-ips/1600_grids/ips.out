@@ -1,0 +1,475 @@
+
+   Number of threads specified in $smp_cpus =   8
+
+ rirpa (c-9-374) : TURBOMOLE rev. V7-4-initial-tag-1259-gd9f9913 compiled 4 Feb 2020 at 15:02:22
+ Copyright (C) 2020 TURBOMOLE GmbH, Karlsruhe
+
+
+    2020-04-23 16:04:57.558 
+
+ 
+ 
+    *************************************************************************
+    *************************** PROGRAM RIRPA *******************************
+    ******                                                             ******
+    ******              H. Eshuis, J. E. Bates and F. Furche           ******
+    ******                                                             ******
+    ****** Nov 2011                                                    ******
+    ****** Copyright TURBOMOLE GmbH                                    ******
+    *************************************************************************
+    
+    
+                                References:                                  
+    
+                   RIRPA:                                                    
+                     H. Eshuis, J. Yarkony, and F. Furche                    
+                     Fast Computation of Molecular Random Phase              
+                     Approximation Correlation Energies Using Resolution     
+                     of the Identity and Imaginary Frequency Integration     
+                     J. Chem. Phys. 132: 234114 (2010)                       
+    
+                     H. Eshuis, J. E. Bates, and F. Furche                   
+                     Electron Correlation Methods Based on                   
+                     the Random Phase Approximation                          
+                     Theor. Chem. Acc.  131: 1084 (2012)                     
+    
+                     G. P. Chen, V. K. Voora, M. M. Agee,                    
+                     S. G. Balasubramani, and F. Furche                      
+                     Random-Phase Approximation Methods                      
+                     Annu. Rev. Phys. Chem. 68: 421 (2017)                   
+    
+                   TWO-COMPONENT RIRPA:                                      
+                     M. Kuehn                                                
+                     Correlation Energies from the                           
+                     Two-Component Random-Phase Approximation                
+                     J. Chem. Theory Comput. 10: 623 (2014)                  
+    
+                   RIRPA GRADIENTS:                                          
+                     A. M. Burow, J. E. Bates, F. Furche*, and H. Eshuis     
+                     Analytical First-Order Molecular Properties and Forces  
+                     within the Adiabatic Connection Random Phase            
+                     Approximation                                           
+                     J. Chem. Theory Comput. 10: 180 (2014)                  
+    
+                   RI-AXK/RI-ACSOSEX/RI-ACSOX:                               
+                     G. P. Chen, M. M. Agee, and F. Furche                   
+                     Performance and Scope of Perturbative Corrections to    
+                     Random-Phase Approximation Energies                     
+                     J. Chem. Theory Comput. 14: 5701 (2018)                 
+    
+                   GKS-RPA:                                                  
+                     V. K. Voora, S. G. Balasubramani, and F. Furche         
+                     Variational Generalized Kohn-Sham Approach Combining    
+                     the Random-Phase-Approximation and Green’s-Function     
+                     Methods                                                 
+                     Phys. Rev. A (accepted)                                 
+    
+    
+    
+      ... OpenMP parallelization enabled, threads:    8
+
+   *-----------------------------------------------------------------------*
+   |                     program will use  8 thread(s)                     |
+   *-----------------------------------------------------------------------*
+
+ MAXIMUM CORE MEMORY WHICH CAN BE ALLOCATED DYNAMICALLY = 20000 MiB
+              ( or 2621440000 double words per process)
+
+ 
+                FOUND RI-J FLAG
+ 
+  HF exact exchange energy will be computed using RI-J.
+
+
+              +--------------------------------------------------+
+              | Atomic coordinate, charge and isotop information |
+              +--------------------------------------------------+
+
+                    atomic coordinates            atom    charge  isotop
+          6.19523026    1.76411488    0.00000000    c      6.000     0
+          3.45579894    1.02070718    0.00000000    c      6.000     0
+          7.12365163    0.96968289   -1.66166115    h      1.000     0
+          7.12365163    0.96968289    1.66166115    h      1.000     0
+          6.36946141    3.80953431    0.00000000    h      1.000     0
+          3.09891562   -1.44447825    0.00000000    o      8.000     0
+          1.73413625    2.58030095    0.00000000    o      8.000     0
+          1.23165949   -1.84598387    0.00000000    h      1.000     0
+         -7.12365163   -0.96968289   -1.66166115    h      1.000     0
+         -3.09891562    1.44447825    0.00000000    o      8.000     0
+         -3.45579894   -1.02070718    0.00000000    c      6.000     0
+         -6.19523026   -1.76411488    0.00000000    c      6.000     0
+         -7.12365163   -0.96968289    1.66166115    h      1.000     0
+         -1.23165949    1.84598387    0.00000000    h      1.000     0
+         -6.36946141   -3.80953431    0.00000000    h      1.000     0
+         -1.73413625   -2.58030095    0.00000000    o      8.000     0
+ 
+       center of nuclear mass  :    0.00000000    0.00000000    0.00000000
+       center of nuclear charge:   -0.00000000    0.00000000    0.00000000
+              +-------------------------------------------------+
+              |        Rotational Constants Section             |
+              +-------------------------------------------------+
+                                   Center of Mass [a.u]:
+               0.00000000000000         0.00000000000000         0.00000000000000
+                     Principal Moments of Inertia [a.u.]
+             320.21249044583215      2023.42337638155095      2321.37087560705095
+                       Rotational constants A,B,C [a.u.]
+               0.00156146313751         0.00024710597191         0.00021538996860
+                     Rotational constants A,B,C [cm**-1]
+               0.18799918270719         0.02975140408040         0.02593281716809
+                        Rotational constants A,B,C [MHz]
+            5636.07370857806654       891.92465582138504       777.44630016869246
+
+   * BASIS SET information:
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    c        4     46     31   def2-TZVPP   [5s3p2d1f|11s6p2d1f]
+    h        8     16     14   def2-TZVPP   [3s2p1d|5s2p1d]
+    o        4     46     31   def2-TZVPP   [5s3p2d1f|11s6p2d1f]
+   ---------------------------------------------------------------------------
+   total:   16    496    360
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :   48
+   total number of contracted shells         :  136
+   total number of cartesian basis functions :  408
+   total number of SCF-basis functions       :  360
+
+
+   * AUXILIARY BASIS SET information:
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    c        4     81     76   def2-TZVPP   [8s6p4d3f1g|8s6p5d3f1g]
+    h        8     30     30   def2-TZVPP   [4s3p2d1f|4s3p2d1f]
+    o        4     81     76   def2-TZVPP   [8s6p4d3f1g|8s6p5d3f1g]
+   ---------------------------------------------------------------------------
+   total:   16    888    848
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :   56
+   total number of contracted shells         :  256
+   total number of cartesian basis functions : 1040
+   total number of SCF-basis functions       :  848
+
+
+   * RIJ AUXILIARY BASIS SET information:
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    c        4     70     49   def2-TZVPP   [6s4p3d1f1g|12s5p4d2f1g]
+    h        8     16     11   def2-TZVPP   [3s1p1d|5s2p1d]
+    o        4     70     49   def2-TZVPP   [6s4p3d1f1g|12s5p4d2f1g]
+   ---------------------------------------------------------------------------
+   total:   16    688    480
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :   56
+   total number of contracted shells         :  160
+   total number of cartesian basis functions :  584
+   total number of SCF-basis functions       :  480
+
+
+ reading orbital data $scfmo  from file mos
+ orbital characterization : scfconv=8
+
+ integral neglect threshold       :  0.46E+02
+
+ scfconv                     8
+
+ there are 1 real representations :   a   
+
+ maximum number of shells which are related by symmetry :  1
+
+ entered riccmos at 2020-04-23 16:04:57.723
+VM size:       813 MB
+  MOs are in ASCII format !
+
+
+ reading orbital data $scfmo  from file mos
+ orbital characterization : scfconv=8
+after riccmoinp VM size:       813 MB
+registered memory usage:         2 MB
+ time elapsed for calculating density matrices :   0.049 sec
+ all orbitals will be active in the correlation treatment
+
+
+   Molecular Orbital Statistic:
+   ============================
+
+   -----------------------------
+   orbitals in total:
+   -----------------------------
+    frozen occupied :      0
+    active occupied :     32
+    active virtual  :    328
+    frozen virtual  :      0
+    all together    :    360
+   -----------------------------
+
+
+     time in riccmoinp     cpu:  1.18 sec    wall:  0.15 sec    ratio:  8.0
+     time in scfdens       cpu:  0.05 sec    wall:  0.01 sec    ratio:  7.0
+     time in mkiao         cpu:  0.00 sec    wall:  0.00 sec    ratio:  0.0
+     time in mkiho         cpu:  0.00 sec    wall:  0.00 sec    ratio:  0.0
+     time in sao2ao        cpu:  0.02 sec    wall:  0.00 sec    ratio: 10.5
+     time in ricclmos      cpu:  0.00 sec    wall:  0.00 sec    ratio:  0.0
+     time in riccmos       cpu:  1.39 sec    wall:  0.17 sec    ratio:  8.0
+ leave riccmos at 2020-04-23 16:04:57.896
+
+     total memory allocated for calculation of (Q|P)**(-1/2) : 9 MiB
+
+
+     calculation of (P|Q) ...
+     time in lp2sym        cpu:  0.13 sec    wall:  0.02 sec    ratio:  7.9
+
+
+     calculation of the Cholesky decomposition of (P|Q)**(-1) ...
+     time in invmetri      cpu:  0.40 sec    wall:  0.05 sec    ratio:  7.8
+
+   threshold for RMS(d[D]) in SCF was     :  0.10E-08
+   integral neglect threshold             :  0.10E-19
+   derivative integral neglect threshold  :  0.10E-06
+
+
+ setting up bound for integral derivative estimation
+
+ increment for numerical differentiation : 0.00050000
+ Allocatable memory for RI due to $ricore (MB):                  1000
+
+ there are 1 real representations :   a   
+
+ maximum number of shells which are related by symmetry :  1
+
+  
+           ------------------------
+               RI-J - INFORMATION
+           ------------------------
+ Contributions to RI integral batches: 
+  neglected integral batches:                   884
+  direct contribution:                            0
+  memory contribution:                  8432
+
+          ------------------------
+          nuclear repulsion energy  :   382.674810393    
+          ------------------------
+
+
+         -----------------
+         -S,T+V- integrals
+         -----------------
+
+ 1e-integrals will be neglected if expon. factor < 0.100000E-19
+
+ residuum convergence criterium   :  0.10E-04
+
+
+ integral neglect threshold       :  0.10E-19
+ integral storage threshold THIZE :  0.10E-04
+ integral storage threshold THIME :         5
+
+
+ WARNING : cannot change filename for statistics 
+  
+           ------------------
+           density functional
+           ------------------
+ PBE functional
+ exchange:    LDA + PBE
+ correlation: LDA (PW) + PBE
+
+ spherical integration : Lebedev's spherical grid
+ spherical gridsize    :                     4
+    i.e. gridpoints    :                   434
+ value for diffuse not defined
+ radial integration    : Chebyshev 2nd kind (scaling 3)
+ radial gridsize       :                     6
+ integration cells     :                    16
+ partition function    : becke
+ partition sharpness   :                     3
+  
+ preparing numerical integration ....
+          Overall gridpoints after grid construction =        156344
+
+          IRREP   tensor space dimension   number of roots
+
+           a             10496                   1
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state density: N =   64.00000608772204    
+
+
+ eta value (in Hartrees) =  1.000000000000000E-002
+ number of passes for ispin    1
+ =    1
+ 
+ Number of eigenvalues < 6e-3:                      0
+ 
+ 
+            -----------------------------
+            Complex frequency integration
+            -----------------------------
+ 
+ Number of Clenshaw-Curtis nodes:                   1600
+ Optimized scaling parameter    :    1.00000000000000     
+ Sensitivity measure            :   1.719291375934517E-012
+ 
+ Initializing scratch files
+ Done with initializing scratch files
+ --------------------------------------------------------
+   Done with freq. integration, now evaluating residues  
+ --------------------------------------------------------
+ For ispin =                     1 Residue will be computed from orbitals
+                     1 to                    32
+ CAUTION: Replacing file wdensov_a      
+ CAUTION: Replacing file wdensoo_a      
+ CAUTION: Replacing file wdensvv_a      
+ CAUTION: Replacing file edensoo_a      
+ CAUTION: Replacing file edensvv_a      
+ Contributions to RI integral batches: 
+  neglected integral batches:                   930
+  direct contribution:                         8386
+  memory contribution:                     0
+ =========================
+    RPA eigenvalues (IPs)  
+ =========================
+ MO#                     1  -539.198456070207       -539.337945397238       eV
+ MO#                     2  -539.337116615964       -539.199308682396       eV
+ MO#                     3  -538.011336739608       -538.156872912290       eV
+ MO#                     4  -538.155820183403       -538.012369377228       eV
+ MO#                     5  -295.217649642554       -295.311097753523       eV
+ MO#                     6  -295.310271209949       -295.218484959847       eV
+ MO#                     7  -291.514629060590       -291.612706384229       eV
+ MO#                     8  -291.611967197337       -291.515381478827       eV
+ MO#                     9  -33.8937597140103       -33.9072947331613       eV
+ MO#                    10  -33.6144442406822       -33.6277960183388       eV
+ MO#                    11  -31.4588035706640       -31.4618351562517       eV
+ MO#                    12  -31.2329584789445       -31.2448306129377       eV
+ MO#                    13  -23.9998560454624       -24.0269878622943       eV
+ MO#                    14  -23.7915670985226       -23.8170444786165       eV
+ MO#                    15  -20.4978767433964       -20.4882824386701       eV
+ MO#                    16  -20.1543286035062       -20.1462564267099       eV
+ MO#                    17  -17.7056838729199       -17.7223966378176       eV
+ MO#                    18  -16.5524017452665       -16.6059219198938       eV
+ MO#                    19  -16.0813831246937       -16.3546279901376       eV
+ MO#                    20  -16.0056584697421       -16.1713933353740       eV
+ MO#                    21  -16.2092028055824       -16.1307261638884       eV
+ MO#                    22  -16.4029938819240       -16.0597745179901       eV
+ MO#                    23  -15.0919639295114       -15.0884644556065       eV
+ MO#                    24  -14.9122965474192       -14.9090814022516       eV
+ MO#                    25  -14.5330609819814       -14.5069054537970       eV
+ MO#                    26  -14.2253805904560       -14.1794498171180       eV
+ MO#                    27  -14.0609278827373       -14.0110535389945       eV
+ MO#                    28  -13.4703402469950       -13.4706305349920       eV
+ MO#                    29  -12.2379041611727       -12.2336553066962       eV
+ MO#                    30  -11.9147901174950       -11.9113707905602       eV
+ MO#                    31  -11.2914274570972       -11.2752847249971       eV
+ MO#                    32  -10.9828728217713       -10.9638985888907       eV
+ CAUTION: Replacing file evect_a        
+
+                  --------------------------------------------------- 
+                 |  HXX+RIRPA total energy     =   -458.56358300213  |
+                  ---------------------------------------------------- 
+                 :  RIRPA correlation energy   =     -2.74154709463  :
+                 :  HXX total energy           =   -455.82203590750  :
+                 :  Hartree energy             =    602.81124527403  :
+                 :  Exact Exchange energy      =    -56.58242527297  :
+                  .................................................... 
+
+
+ maximum number of Davidson iterations set to   35
+
+
+ logfile dipl_a    exists already
+
+                    ------------------
+
+                     CPKS equations   
+
+                    ------------------
+ CPKS equations will be skipped since either
+       i)orbitals are optimized (oorpa>0)
+      ii)ips/eas are requested     
+
+                    -------------------
+
+                     relaxed densities 
+
+                    -------------------
+ CAUTION: Replacing file edensov_a      
+ Cartesian gradients will be skipped
+ Wavefn analysis  will be skipped
+
+    ------------------------------------------------------------------------
+    Rirpa profiling                cpu                    wall         ratio
+    ------------------------------------------------------------------------
+    module                         sec     %               sec     %
+    ------------------------------------------------------------------------
+    RIRPA                     17816.4  100.00         2237.9  100.00   8.0
+    ehxx                         59.2    0.33            7.4    0.33   8.0
+    RIRPA_grad                17746.5   99.61         2228.9   99.60   8.0
+    numder                    17714.2   99.43         2224.0   99.38   8.0
+    Qmatrix                    2098.4   11.78          262.4   11.72   8.0
+    tqbuild                    1588.7    8.92          198.6    8.87   8.0
+    trpaln                       41.9    0.23            5.2    0.23   8.0
+    qtbuild                     321.0    1.80           40.2    1.79   8.0
+    Q*Qt                        273.8    1.54           34.3    1.53   8.0
+    T and GBQt                12463.0   69.95         1560.9   69.75   8.0
+    rpatab                     4426.3   24.84          553.4   24.73   8.0
+    rpatab,pre                  183.9    1.03           23.0    1.03   8.0
+    rpatab,s*qt                2800.7   15.72          350.1   15.65   8.0
+    rpatab,g*sqt               1504.8    8.45          188.1    8.41   8.0
+    rpatab,g*sqt,g*(s*          223.1    1.25           27.9    1.25   8.0
+    rpatab,g*sqt,(g*s*         2929.6   16.44          366.3   16.37   8.0
+    rpatab,m                    744.1    4.18           93.0    4.16   8.0
+    rpatab,dinv*gsl             107.0    0.60           13.4    0.60   8.0
+    rpatab,mprime               570.1    3.20           71.2    3.18   8.0
+    rpagsqtipp                 3462.0   19.43          432.8   19.34   8.0
+    rpatij                     1318.9    7.40          164.9    7.37   8.0
+    rpatij,pre                   77.2    0.43            9.7    0.43   8.0
+    rpatij,g*s                  105.2    0.59           13.2    0.59   8.0
+    rpatij,m                    426.2    2.39           53.3    2.38   8.0
+    rpatij,dinv*gsqt            280.5    1.57           35.1    1.57   8.0
+    rpatij,mprime               427.2    2.40           53.4    2.39   8.0
+    W:rpawmat                  2502.1   14.04          312.8   13.98   8.0
+    W:B*Qt1                    2502.1   14.04          312.8   13.98   8.0
+    gamma                        25.7    0.14            7.4    0.33   3.5
+    rpagip                       11.6    0.07            3.6    0.16   3.2
+    H[ P ]                       18.5    0.10            2.3    0.10   8.0
+    ------------------------------------------------------------------------
+    sum                       94791.1  532.04        11890.2  531.32   8.0
+    ------------------------------------------------------------------------
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time :  4 hours 56 minutes and 57 seconds
+         total wall-time : 37 minutes and 18 seconds
+    ------------------------------------------------------------------------
+
+   ****  rirpa : all done  ****
+
+
+    2020-04-23 16:42:15.465 
+

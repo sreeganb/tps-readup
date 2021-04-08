@@ -1,0 +1,19 @@
+#!/bin/sh
+# environment settings for ssh-runs
+# general
+export PATH=/sopt/TURBOMOLE/7.4.1-official/bin/em64t-unknown-linux-gnu_smp:/sopt/TURBOMOLE/7.4.1-official/scripts:/sopt/INTEL/vtune_amplifier_2018/bin64:/sopt/INTEL/inspector_2018/bin64:/sopt/INTEL/advisor_2018/bin64:/sopt/INTEL/compilers_and_libraries_2018.3.222/linux/bin/intel64:/sopt/INTEL/debugger_2018/gdb/intel64_mic/bin:/sopt/TURBOMOLE/7.4.1-official/bin/em64t-unknown-linux-gnu:/sopt/TURBOMOLE/7.4.1-official/scripts:/export/home/sreeganb/anaconda3/bin:/usr/bin/python3:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/export/home/sreeganb/bin
+# TURBOMOLE
+export TURBODIR=/sopt/TURBOMOLE/7.4.1-official
+export TOOLS=
+export PARA_ARCH=
+export TMOUT=
+# NUMFORCE
+export STARTDIR=/work/sreeganb/1991981
+export FORCEDIR=/work/sreeganb/1991981/numforce
+export MAXJOBS=8
+export SCRIPTS=/sopt/TURBOMOLE/7.4.1-official/scripts
+export TURBOLOAD=/sopt/TURBOMOLE/7.4.1-official/bin/em64t-unknown-linux-gnu
+export getmo=/sopt/TURBOMOLE/7.4.1-official/bin/em64t-unknown-linux-gnu/ridft
+export getgrad=/sopt/TURBOMOLE/7.4.1-official/bin/em64t-unknown-linux-gnu/rdgrad
+export showdg=/sopt/TURBOMOLE/7.4.1-official/bin/em64t-unknown-linux-gnu/sdg
+export LD_LIBRARY_PATH=/sopt/TURBOMOLE/7.4.1-official/libso:/sopt/INTEL/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64:/sopt/INTEL/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64:/opt/intel/mic/coi/host-linux-release/lib:/opt/intel/mic/myo/lib:/sopt/INTEL/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64:/sopt/INTEL/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7:/sopt/INTEL/debugger_2018/libipt/intel64/lib:/sopt/INTEL/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin:/sopt/INTEL/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.7:/sopt/INTEL/compilers_and_libraries_2018.3.222/linux/daal/../compiler/lib/intel64_lin:/sopt/TURBOMOLE/7.4.1-official/libso/em64t-unknown-linux-gnu_mpi

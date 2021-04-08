@@ -1,0 +1,738 @@
+
+   Number of threads specified in $smp_cpus =   8
+
+ rirpa (c-9-331) : TURBOMOLE rev. V7-4-initial-tag-1259-gd9f9913 compiled 4 Feb 2020 at 15:02:22
+ Copyright (C) 2020 TURBOMOLE GmbH, Karlsruhe
+
+
+    2020-04-19 14:44:41.284 
+
+ 
+ 
+    *************************************************************************
+    *************************** PROGRAM RIRPA *******************************
+    ******                                                             ******
+    ******              H. Eshuis, J. E. Bates and F. Furche           ******
+    ******                                                             ******
+    ****** Nov 2011                                                    ******
+    ****** Copyright TURBOMOLE GmbH                                    ******
+    *************************************************************************
+    
+    
+                                References:                                  
+    
+                   RIRPA:                                                    
+                     H. Eshuis, J. Yarkony, and F. Furche                    
+                     Fast Computation of Molecular Random Phase              
+                     Approximation Correlation Energies Using Resolution     
+                     of the Identity and Imaginary Frequency Integration     
+                     J. Chem. Phys. 132: 234114 (2010)                       
+    
+                     H. Eshuis, J. E. Bates, and F. Furche                   
+                     Electron Correlation Methods Based on                   
+                     the Random Phase Approximation                          
+                     Theor. Chem. Acc.  131: 1084 (2012)                     
+    
+                     G. P. Chen, V. K. Voora, M. M. Agee,                    
+                     S. G. Balasubramani, and F. Furche                      
+                     Random-Phase Approximation Methods                      
+                     Annu. Rev. Phys. Chem. 68: 421 (2017)                   
+    
+                   TWO-COMPONENT RIRPA:                                      
+                     M. Kuehn                                                
+                     Correlation Energies from the                           
+                     Two-Component Random-Phase Approximation                
+                     J. Chem. Theory Comput. 10: 623 (2014)                  
+    
+                   RIRPA GRADIENTS:                                          
+                     A. M. Burow, J. E. Bates, F. Furche*, and H. Eshuis     
+                     Analytical First-Order Molecular Properties and Forces  
+                     within the Adiabatic Connection Random Phase            
+                     Approximation                                           
+                     J. Chem. Theory Comput. 10: 180 (2014)                  
+    
+                   RI-AXK/RI-ACSOSEX/RI-ACSOX:                               
+                     G. P. Chen, M. M. Agee, and F. Furche                   
+                     Performance and Scope of Perturbative Corrections to    
+                     Random-Phase Approximation Energies                     
+                     J. Chem. Theory Comput. 14: 5701 (2018)                 
+    
+                   GKS-RPA:                                                  
+                     V. K. Voora, S. G. Balasubramani, and F. Furche         
+                     Variational Generalized Kohn-Sham Approach Combining    
+                     the Random-Phase-Approximation and Green’s-Function     
+                     Methods                                                 
+                     Phys. Rev. A (accepted)                                 
+    
+    
+    
+      ... OpenMP parallelization enabled, threads:    8
+
+   *-----------------------------------------------------------------------*
+   |                     program will use  8 thread(s)                     |
+   *-----------------------------------------------------------------------*
+
+ MAXIMUM CORE MEMORY WHICH CAN BE ALLOCATED DYNAMICALLY = 20000 MiB
+              ( or 2621440000 double words per process)
+
+ 
+                FOUND RI-J FLAG
+ 
+  HF exact exchange energy will be computed using RI-J.
+  ****************************************
+  **  Orbital Optimized RPA Calculation **
+  ****************************************
+
+
+              +--------------------------------------------------+
+              | Atomic coordinate, charge and isotop information |
+              +--------------------------------------------------+
+
+                    atomic coordinates            atom    charge  isotop
+          6.19523026    1.76411488    0.00000000    c      6.000     0
+          3.45579894    1.02070718    0.00000000    c      6.000     0
+          7.12365163    0.96968289   -1.66166115    h      1.000     0
+          7.12365163    0.96968289    1.66166115    h      1.000     0
+          6.36946141    3.80953431    0.00000000    h      1.000     0
+          3.09891562   -1.44447825    0.00000000    o      8.000     0
+          1.73413625    2.58030095    0.00000000    o      8.000     0
+          1.23165949   -1.84598387    0.00000000    h      1.000     0
+         -7.12365163   -0.96968289   -1.66166115    h      1.000     0
+         -3.09891562    1.44447825    0.00000000    o      8.000     0
+         -3.45579894   -1.02070718    0.00000000    c      6.000     0
+         -6.19523026   -1.76411488    0.00000000    c      6.000     0
+         -7.12365163   -0.96968289    1.66166115    h      1.000     0
+         -1.23165949    1.84598387    0.00000000    h      1.000     0
+         -6.36946141   -3.80953431    0.00000000    h      1.000     0
+         -1.73413625   -2.58030095    0.00000000    o      8.000     0
+ 
+       center of nuclear mass  :    0.00000000    0.00000000    0.00000000
+       center of nuclear charge:   -0.00000000    0.00000000    0.00000000
+              +-------------------------------------------------+
+              |        Rotational Constants Section             |
+              +-------------------------------------------------+
+                                   Center of Mass [a.u]:
+               0.00000000000000         0.00000000000000         0.00000000000000
+                     Principal Moments of Inertia [a.u.]
+             320.21249044583215      2023.42337638155095      2321.37087560705095
+                       Rotational constants A,B,C [a.u.]
+               0.00156146313751         0.00024710597191         0.00021538996860
+                     Rotational constants A,B,C [cm**-1]
+               0.18799918270719         0.02975140408040         0.02593281716809
+                        Rotational constants A,B,C [MHz]
+            5636.07370857806654       891.92465582138504       777.44630016869246
+
+   * BASIS SET information:
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    c        4     46     31   def2-TZVPP   [5s3p2d1f|11s6p2d1f]
+    h        8     16     14   def2-TZVPP   [3s2p1d|5s2p1d]
+    o        4     46     31   def2-TZVPP   [5s3p2d1f|11s6p2d1f]
+   ---------------------------------------------------------------------------
+   total:   16    496    360
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :   48
+   total number of contracted shells         :  136
+   total number of cartesian basis functions :  408
+   total number of SCF-basis functions       :  360
+
+
+   * AUXILIARY BASIS SET information:
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    c        4     81     76   def2-TZVPP   [8s6p4d3f1g|8s6p5d3f1g]
+    h        8     30     30   def2-TZVPP   [4s3p2d1f|4s3p2d1f]
+    o        4     81     76   def2-TZVPP   [8s6p4d3f1g|8s6p5d3f1g]
+   ---------------------------------------------------------------------------
+   total:   16    888    848
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :   56
+   total number of contracted shells         :  256
+   total number of cartesian basis functions : 1040
+   total number of SCF-basis functions       :  848
+
+
+   * RIJ AUXILIARY BASIS SET information:
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    c        4     70     49   def2-TZVPP   [6s4p3d1f1g|12s5p4d2f1g]
+    h        8     16     11   def2-TZVPP   [3s1p1d|5s2p1d]
+    o        4     70     49   def2-TZVPP   [6s4p3d1f1g|12s5p4d2f1g]
+   ---------------------------------------------------------------------------
+   total:   16    688    480
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :   56
+   total number of contracted shells         :  160
+   total number of cartesian basis functions :  584
+   total number of SCF-basis functions       :  480
+
+
+ reading orbital data $scfmo  from file mos
+ orbital characterization : scfconv=8
+
+    mo occupation :
+   irrep   mo's   occupied
+    a      360       32
+ 
+ number of basis functions   :   360
+ number of occupied orbitals :    32
+ 
+
+ integral neglect threshold       :  0.29E+02
+
+ scfconv                     8
+
+ there are 1 real representations :   a   
+
+ maximum number of shells which are related by symmetry :  1
+
+ time elapsed for calculating density matrices :   0.007 sec
+ all orbitals will be active in the correlation treatment
+
+     total memory allocated for calculation of (Q|P)**(-1/2) : 9 MiB
+
+
+     calculation of (P|Q) ...
+     time in lp2sym        cpu:  0.15 sec    wall:  0.06 sec    ratio:  2.4
+
+
+     calculation of the Cholesky decomposition of (P|Q)**(-1) ...
+     time in invmetri      cpu:  0.64 sec    wall:  0.08 sec    ratio:  7.9
+
+   threshold for RMS(d[D]) in SCF was     :  0.10E-08
+   integral neglect threshold             :  0.32E-12
+   derivative integral neglect threshold  :  0.10E-06
+
+
+ setting up bound for integral derivative estimation
+
+ increment for numerical differentiation : 0.00050000
+ Allocatable memory for RI due to $ricore (MB):                  1000
+
+ there are 1 real representations :   a   
+
+ maximum number of shells which are related by symmetry :  1
+
+  
+           ------------------------
+               RI-J - INFORMATION
+           ------------------------
+ Contributions to RI integral batches: 
+  neglected integral batches:                  1532
+  direct contribution:                            0
+  memory contribution:                  7784
+
+          ------------------------
+          nuclear repulsion energy  :   382.674810393    
+          ------------------------
+
+
+         -----------------
+         -S,T+V- integrals
+         -----------------
+
+ 1e-integrals will be neglected if expon. factor < 0.320513E-12
+
+ residuum convergence criterium   :  0.10E-04
+
+
+ integral neglect threshold       :  0.82E-11
+ integral storage threshold THIZE :  0.10E-04
+ integral storage threshold THIME :         5
+
+
+ WARNING : cannot change filename for statistics 
+  
+           ------------------
+           density functional
+           ------------------
+ PBE functional
+ exchange:    LDA + PBE
+ correlation: LDA (PW) + PBE
+
+ spherical integration : Lebedev's spherical grid
+ spherical gridsize    :                     4
+    i.e. gridpoints    :                   434
+ value for diffuse not defined
+ radial integration    : Chebyshev 2nd kind (scaling 3)
+ radial gridsize       :                     6
+ integration cells     :                    16
+ partition function    : becke
+ partition sharpness   :                     3
+  
+ preparing numerical integration ....
+          Overall gridpoints after grid construction =        156344
+
+          IRREP   tensor space dimension   number of roots
+
+           a             10496                   1
+ Orbital optimization will be carried out
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state density: N =   64.00000795017621    
+
+
+          Overall gridpoints after grid construction =        156344
+ number of passes for ispin    1
+ =    1
+ 
+            -----------------------------
+            Complex frequency integration
+            -----------------------------
+ 
+ Number of Clenshaw-Curtis nodes:                    100
+ Optimized scaling parameter    :    3.88411607106915     
+ Sensitivity measure            :  -1.713534453218202E-010
+ 
+ Contributions to RI integral batches: 
+  neglected integral batches:                  1630
+  direct contribution:                         7686
+  memory contribution:                     0
+
+                  --------------------------------------------------- 
+                 |  HXX+RIRPA total energy     =   -458.52750089899  |
+                  ---------------------------------------------------- 
+                 :  RIRPA correlation energy   =     -2.78649476501  :
+                 :  HXX total energy           =   -455.74100613399  :
+                 :  Hartree energy             =    603.02577019564  :
+                 :  Exact Exchange energy      =    -56.42377240204  :
+                  .................................................... 
+
+          max. resid. norm for Fia-block=  9.044D-02 for orbital      2a         
+          max. resid. fock norm         =  2.065D-01 for orbital    359a         
+          Overall gridpoints after grid construction =        156344
+
+ orbitals $scfmo  will be written to file mos
+          Overall gridpoints after grid construction =        156344
+                            current damping = 0.650
+ time elapsed for calculating density matrices :   0.047 sec
+ all orbitals will be active in the correlation treatment
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state density: N =   64.00000705673202    
+
+
+ Contributions to RI integral batches: 
+  neglected integral batches:                  1630
+  direct contribution:                         7686
+  memory contribution:                     0
+
+                  --------------------------------------------------- 
+                 |  HXX+RIRPA total energy     =   -458.55553548568  |
+                  ---------------------------------------------------- 
+                 :  RIRPA correlation energy   =     -2.76160459648  :
+                 :  HXX total energy           =   -455.79393088920  :
+                 :  Hartree energy             =    602.75493583450  :
+                 :  Exact Exchange energy      =    -56.50791793065  :
+                  .................................................... 
+
+          Norm of current diis error: 0.36963    
+          max. resid. norm for Fia-block=  3.991D-02 for orbital      2a         
+          max. resid. fock norm         =  1.963D-01 for orbital    359a         
+          Overall gridpoints after grid construction =        156344
+
+ orbitals $scfmo  will be written to file mos
+          Overall gridpoints after grid construction =        156344
+                            current damping = 0.550
+ time elapsed for calculating density matrices :   0.047 sec
+ all orbitals will be active in the correlation treatment
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state density: N =   64.00000652580668    
+
+
+ Contributions to RI integral batches: 
+  neglected integral batches:                  1630
+  direct contribution:                         7686
+  memory contribution:                     0
+
+                  --------------------------------------------------- 
+                 |  HXX+RIRPA total energy     =   -458.56196996311  |
+                  ---------------------------------------------------- 
+                 :  RIRPA correlation energy   =     -2.75062807559  :
+                 :  HXX total energy           =   -455.81134188751  :
+                 :  Hartree energy             =    602.76398429408  :
+                 :  Exact Exchange energy      =    -56.53894978892  :
+                  .................................................... 
+
+          Norm of current diis error: 0.16014    
+          max. resid. norm for Fia-block=  1.700D-02 for orbital      4a         
+          max. resid. fock norm         =  1.938D-01 for orbital    359a         
+          Overall gridpoints after grid construction =        156344
+
+ orbitals $scfmo  will be written to file mos
+          Overall gridpoints after grid construction =        156344
+                            current damping = 0.450
+ time elapsed for calculating density matrices :   0.076 sec
+ all orbitals will be active in the correlation treatment
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state density: N =   64.00000621125071    
+
+
+ Contributions to RI integral batches: 
+  neglected integral batches:                  1630
+  direct contribution:                         7686
+  memory contribution:                     0
+
+                  --------------------------------------------------- 
+                 |  HXX+RIRPA total energy     =   -458.56337747087  |
+                  ---------------------------------------------------- 
+                 :  RIRPA correlation energy   =     -2.74453228166  :
+                 :  HXX total energy           =   -455.81884518921  :
+                 :  Hartree energy             =    602.82580325896  :
+                 :  Exact Exchange energy      =    -56.57307853151  :
+                  .................................................... 
+
+          Norm of current diis error: 0.55941E-01
+          max. resid. norm for Fia-block=  5.579D-03 for orbital      2a         
+          max. resid. fock norm         =  1.936D-01 for orbital    359a         
+          Overall gridpoints after grid construction =        156344
+
+ orbitals $scfmo  will be written to file mos
+          Overall gridpoints after grid construction =        156344
+                            current damping = 0.350
+ time elapsed for calculating density matrices :   0.045 sec
+ all orbitals will be active in the correlation treatment
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state density: N =   64.00000612990345    
+
+
+ Contributions to RI integral batches: 
+  neglected integral batches:                  1630
+  direct contribution:                         7686
+  memory contribution:                     0
+
+                  --------------------------------------------------- 
+                 |  HXX+RIRPA total energy     =   -458.56355990130  |
+                  ---------------------------------------------------- 
+                 :  RIRPA correlation energy   =     -2.74246413376  :
+                 :  HXX total energy           =   -455.82109576754  :
+                 :  Hartree energy             =    602.80413932577  :
+                 :  Exact Exchange energy      =    -56.57777908938  :
+                  .................................................... 
+
+          Norm of current diis error: 0.18072E-01
+          max. resid. norm for Fia-block=  1.714D-03 for orbital      3a         
+          max. resid. fock norm         =  1.937D-01 for orbital    359a         
+          Overall gridpoints after grid construction =        156344
+
+ orbitals $scfmo  will be written to file mos
+          Overall gridpoints after grid construction =        156344
+                            current damping = 0.250
+ time elapsed for calculating density matrices :   0.047 sec
+ all orbitals will be active in the correlation treatment
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state density: N =   64.00000609502167    
+
+
+ Contributions to RI integral batches: 
+  neglected integral batches:                  1630
+  direct contribution:                         7686
+  memory contribution:                     0
+
+                  --------------------------------------------------- 
+                 |  HXX+RIRPA total energy     =   -458.56358035459  |
+                  ---------------------------------------------------- 
+                 :  RIRPA correlation energy   =     -2.74177363382  :
+                 :  HXX total energy           =   -455.82180672077  :
+                 :  Hartree energy             =    602.81178057321  :
+                 :  Exact Exchange energy      =    -56.58152316442  :
+                  .................................................... 
+
+          Norm of current diis error: 0.50926E-02
+          max. resid. norm for Fia-block=  4.856D-04 for orbital     30a         
+          max. resid. fock norm         =  1.937D-01 for orbital    359a         
+          Overall gridpoints after grid construction =        156344
+
+ orbitals $scfmo  will be written to file mos
+          Overall gridpoints after grid construction =        156344
+                            current damping = 0.150
+ time elapsed for calculating density matrices :   0.077 sec
+ all orbitals will be active in the correlation treatment
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state density: N =   64.00000608920453    
+
+
+ Contributions to RI integral batches: 
+  neglected integral batches:                  1630
+  direct contribution:                         7686
+  memory contribution:                     0
+
+                  --------------------------------------------------- 
+                 |  HXX+RIRPA total energy     =   -458.56358255253  |
+                  ---------------------------------------------------- 
+                 :  RIRPA correlation energy   =     -2.74159880298  :
+                 :  HXX total energy           =   -455.82198374956  :
+                 :  Hartree energy             =    602.81144455700  :
+                 :  Exact Exchange energy      =    -56.58223006976  :
+                  .................................................... 
+
+          Norm of current diis error: 0.19353E-02
+          max. resid. norm for Fia-block=  1.583D-04 for orbital     31a         
+          max. resid. fock norm         =  1.937D-01 for orbital    359a         
+          Overall gridpoints after grid construction =        156344
+
+ orbitals $scfmo  will be written to file mos
+          Overall gridpoints after grid construction =        156344
+                            current damping = 0.050
+ time elapsed for calculating density matrices :   0.075 sec
+ all orbitals will be active in the correlation treatment
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state density: N =   64.00000608821261    
+
+
+ Contributions to RI integral batches: 
+  neglected integral batches:                  1630
+  direct contribution:                         7686
+  memory contribution:                     0
+
+                  --------------------------------------------------- 
+                 |  HXX+RIRPA total energy     =   -458.56358290285  |
+                  ---------------------------------------------------- 
+                 :  RIRPA correlation energy   =     -2.74156016976  :
+                 :  HXX total energy           =   -455.82202273308  :
+                 :  Hartree energy             =    602.81090697326  :
+                 :  Exact Exchange energy      =    -56.58231088521  :
+                  .................................................... 
+
+          Norm of current diis error: 0.62964E-03
+          max. resid. norm for Fia-block=  1.050D-04 for orbital     30a         
+          max. resid. fock norm         =  1.937D-01 for orbital    359a         
+          Overall gridpoints after grid construction =        156344
+
+ orbitals $scfmo  will be written to file mos
+          Overall gridpoints after grid construction =        156344
+                            current damping = 0.050
+ time elapsed for calculating density matrices :   0.081 sec
+ all orbitals will be active in the correlation treatment
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state density: N =   64.00000608785849    
+
+
+ Contributions to RI integral batches: 
+  neglected integral batches:                  1630
+  direct contribution:                         7686
+  memory contribution:                     0
+
+                  --------------------------------------------------- 
+                 |  HXX+RIRPA total energy     =   -458.56358298230  |
+                  ---------------------------------------------------- 
+                 :  RIRPA correlation energy   =     -2.74155068164  :
+                 :  HXX total energy           =   -455.82203230066  :
+                 :  Hartree energy             =    602.81140527457  :
+                 :  Exact Exchange energy      =    -56.58243492897  :
+                  .................................................... 
+
+          Norm of current diis error: 0.31411E-03
+          max. resid. norm for Fia-block=  4.804D-05 for orbital     30a         
+          max. resid. fock norm         =  1.937D-01 for orbital    359a         
+          Overall gridpoints after grid construction =        156344
+
+ orbitals $scfmo  will be written to file mos
+          Overall gridpoints after grid construction =        156344
+                            current damping = 0.050
+ time elapsed for calculating density matrices :   0.044 sec
+ all orbitals will be active in the correlation treatment
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state density: N =   64.00000608790090    
+
+
+ Contributions to RI integral batches: 
+  neglected integral batches:                  1630
+  direct contribution:                         7686
+  memory contribution:                     0
+
+                  --------------------------------------------------- 
+                 |  HXX+RIRPA total energy     =   -458.56358299951  |
+                  ---------------------------------------------------- 
+                 :  RIRPA correlation energy   =     -2.74154835628  :
+                 :  HXX total energy           =   -455.82203464323  :
+                 :  Hartree energy             =    602.81114150934  :
+                 :  Exact Exchange energy      =    -56.58240505612  :
+                  .................................................... 
+
+          Norm of current diis error: 0.10930E-03
+          max. resid. norm for Fia-block=  2.101D-05 for orbital     30a         
+          max. resid. fock norm         =  1.937D-01 for orbital    359a         
+          Overall gridpoints after grid construction =        156344
+
+ orbitals $scfmo  will be written to file mos
+          Overall gridpoints after grid construction =        156344
+                            current damping = 0.050
+ time elapsed for calculating density matrices :   0.046 sec
+ all orbitals will be active in the correlation treatment
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state density: N =   64.00000608775653    
+
+
+ Contributions to RI integral batches: 
+  neglected integral batches:                  1630
+  direct contribution:                         7686
+  memory contribution:                     0
+
+                  --------------------------------------------------- 
+                 |  HXX+RIRPA total energy     =   -458.56358300194  |
+                  ---------------------------------------------------- 
+                 :  RIRPA correlation energy   =     -2.74154728672  :
+                 :  HXX total energy           =   -455.82203571521  :
+                 :  Hartree energy             =    602.81127548957  :
+                 :  Exact Exchange energy      =    -56.58243039659  :
+                  .................................................... 
+
+          Norm of current diis error: 0.34406E-04
+          max. resid. norm for Fia-block=  6.017D-06 for orbital     30a         
+          max. resid. fock norm         =  1.937D-01 for orbital    359a         
+          Overall gridpoints after grid construction =        156344
+
+ orbitals $scfmo  will be written to file mos
+          Overall gridpoints after grid construction =        156344
+                            current damping = 0.050
+ time elapsed for calculating density matrices :   0.045 sec
+ all orbitals will be active in the correlation treatment
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state density: N =   64.00000608774613    
+
+
+ Contributions to RI integral batches: 
+  neglected integral batches:                  1630
+  direct contribution:                         7686
+  memory contribution:                     0
+
+                  --------------------------------------------------- 
+                 |  HXX+RIRPA total energy     =   -458.56358300213  |
+                  ---------------------------------------------------- 
+                 :  RIRPA correlation energy   =     -2.74154720864  :
+                 :  HXX total energy           =   -455.82203579349  :
+                 :  Hartree energy             =    602.81123605937  :
+                 :  Exact Exchange energy      =    -56.58242325800  :
+                  .................................................... 
+
+          Norm of current diis error: 0.14356E-04
+          max. resid. norm for Fia-block=  1.893D-06 for orbital     30a         
+          max. resid. fock norm         =  1.937D-01 for orbital    359a         
+          Overall gridpoints after grid construction =        156344
+
+ orbitals $scfmo  will be written to file mos
+          Overall gridpoints after grid construction =        156344
+ Orbital optimization done
+
+ maximum number of Davidson iterations set to   35
+
+
+ logfile dipl_a    will be constructed
+
+                    ------------------
+
+                     CPKS equations   
+
+                    ------------------
+ CPKS equations will be skipped since either
+       i)orbitals are optimized (oorpa>0)
+      ii)ips/eas are requested     
+
+                    -------------------
+
+                     relaxed densities 
+
+                    -------------------
+ Cartesian gradients will be skipped
+ Wavefn analysis  will be skipped
+
+    ------------------------------------------------------------------------
+    Rirpa profiling                cpu                    wall         ratio
+    ------------------------------------------------------------------------
+    module                         sec     %               sec     %
+    ------------------------------------------------------------------------
+    RIRPA                      8714.0  100.00         1121.7  100.00   7.8
+    riccmos                      13.6    0.16            1.7    0.15   7.9
+    ccmkbaoi                     59.9    0.69            7.5    0.67   8.0
+    ehxx                         38.9    0.45            4.9    0.43   8.0
+    RIRPA_grad                 8663.4   99.42         1114.8   99.38   7.8
+    rirhs                      7777.1   89.25         1001.9   89.32   7.8
+    Qmatrix                    1512.7   17.36          189.5   16.89   8.0
+    tqbuild                    1122.1   12.88          140.3   12.50   8.0
+    trpaln                       27.6    0.32            3.5    0.31   8.0
+    qtbuild                     252.4    2.90           31.6    2.81   8.0
+    Q*Qt                        190.2    2.18           23.8    2.12   8.0
+    T and GBQt                 5207.6   59.76          651.2   58.06   8.0
+    rpatab                     6228.8   71.48          778.7   69.42   8.0
+    rpatab,pre                   67.2    0.77            8.4    0.75   8.0
+    rpatab,s*qt                 924.5   10.61          115.6   10.30   8.0
+    rpatab,g*sqt               1046.7   12.01          130.8   11.66   8.0
+    rpatab,g*sqt,g*(s*           84.4    0.97           10.5    0.94   8.0
+    rpatab,g*sqt,(g*s*          961.6   11.04          120.2   10.72   8.0
+    rpatab,m                    539.0    6.18           67.4    6.01   8.0
+    rpatab,dinv*gsl              87.2    1.00           10.9    0.97   8.0
+    rpatab,mprime               401.2    4.60           50.2    4.47   8.0
+    rpatij                      822.3    9.44          102.8    9.17   8.0
+    rpatij,pre                   46.8    0.54            5.9    0.52   8.0
+    rpatij,g*s                   83.4    0.96           10.4    0.93   8.0
+    rpatij,m                    238.3    2.73           29.8    2.66   8.0
+    rpatij,dinv*gsqt            214.1    2.46           26.8    2.39   8.0
+    rpatij,mprime               237.8    2.73           29.8    2.65   8.0
+    gamma                       487.9    5.60           87.9    7.84   5.5
+    H[ P ]                       79.5    0.91           10.1    0.90   7.9
+    oorpa                       209.7    2.41           27.4    2.44   7.6
+    ------------------------------------------------------------------------
+    sum                       46355.2  531.96         5918.3  527.62   7.8
+    ------------------------------------------------------------------------
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time :  2 hours 25 minutes and 14 seconds
+         total wall-time : 18 minutes and 42 seconds
+    ------------------------------------------------------------------------
+
+   ****  rirpa : all done  ****
+
+
+    2020-04-19 15:03:22.997 
+

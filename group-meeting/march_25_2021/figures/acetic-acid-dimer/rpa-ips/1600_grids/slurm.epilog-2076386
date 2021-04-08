@@ -1,0 +1,13 @@
+-------------- slurm.epilog ---------------
+Job ID:    2076386
+User:      sreeganb
+Group:     furche
+Job Name:  acetic-acid-dimer
+Partition: sib2.9
+QOS:       normal 
+Account:   furche
+Reason:    None,c-9-374
+Nodelist:  c-9-374
+Command:   /DFS-L/DATA/furche/sreeganb/acetate-xps/acetic-acid-dimer/rpa-ips/1600_grids/run_slurm.turbomole
+WorkDir:   /DFS-L/DATA/furche/sreeganb/acetate-xps/acetic-acid-dimer/rpa-ips/1600_grids
+BatchHost: c-9-374

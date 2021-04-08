@@ -1,0 +1,8 @@
+$title
+$symmetry c1
+$tensor space dimension    10496
+$scfinstab polly
+$current subspace dimension        1
+$current iteration        0
+$eigenpairs
+$end

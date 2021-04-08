@@ -1,0 +1,21 @@
+=================================== SLURM JOB ===================================
+Wed Apr 22 04:42:32 PDT 2020
+
+The job will be started on the following node(s):
+c-14-144
+
+Slurm User:         sreeganb
+Run Directory:      /work/sreeganb/2069112
+Job ID:             2069112
+Job Name:           acetic-acid-dimer
+Partition:          sib2.9
+Number of nodes:    1
+Number of tasks:    8
+Submitted From:     gplogin2.gp.local:/DFS-L/DATA/furche/sreeganb/acetate-xps/acetic-acid-dimer/rpa-ips/800_grids
+=================================== SLURM JOB ===================================
+
+--- SLURM job-script output ---
+ ridft ended normally
+ rirpa ended normally
+ rirpa ended normally
+Job Done

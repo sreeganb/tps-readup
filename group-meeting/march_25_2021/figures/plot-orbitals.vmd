@@ -1,0 +1,183 @@
+#------------------------------------------------------------------------------
+# VMD script for plotting MOs that were generated as cub files using 
+# ridft -proper or by any other means. Type "vmd -e plot-orbitals.vmd" to 
+# run the script. Make sure to replace the names of the orbitals to be plotted 
+# below (lines 106-109) with the names of your orbitals.  
+#------------------------------------------------------------------------------
+
+# function to add bond
+proc addbond { molid atom1 atom2 } {
+  if {$atom1 == $atom2 } {
+    #error "cannot bond an atom to itself"
+    return
+  }
+  if { $atom1 > $atom2 } {
+    set tmp $atom1
+    set atom1 $atom2
+    set atom2 $tmp
+  }
+  set sel [atomselect $molid "index $atom1 $atom2"]
+  lassign [$sel getbonds] bond1 bond2
+
+  set id [lsearch -exact $bond1 $atom2]
+  if { $id == -1 } {
+    lappend bond1 $atom2
+  }
+  set id [lsearch -exact $bond2 $atom1]
+  if { $id == -1 } {
+    lappend bond2 $atom1
+  }
+  $sel setbonds [list $bond1 $bond2] 
+  $sel delete
+}
+proc delbond { molid atom1 atom2 } {
+  if { $atom1 > $atom2 } {
+    set tmp $atom1
+    set atom1 $atom2
+    set atom2 $tmp
+  }
+  set sel [atomselect $molid "index $atom1 $atom2"]
+  lassign [$sel getbonds] bond1 bond2
+  
+  set id [lsearch -exact $bond1 $atom2]
+  if { $id != -1 } {
+    set bond1 [lreplace $bond1 $id $id ]
+  }
+  set id [lsearch -exact $bond2 $atom1]
+  if { $id != -1 } {
+    set bond2 [lreplace $bond2 $id $id ]
+  }
+  $sel setbonds [list $bond1 $bond2] 
+  $sel delete
+}
+# Normal settings:
+axes location Off
+color Display Background white
+# Load xyz file
+mol new {coord.xyz}
+mol modstyle 0 0 CPK 0.600000 0.300000 10.000000 10.000000
+display depthcue off
+display projection Orthographic
+mol modselect 0 0 all not hydrogen
+mol modcolor 0 0 Element
+color Element C gray
+color Element Sm green
+mol modmaterial 0 0 Diffuse
+light 2 on
+#light 3 on
+light 1 off
+light 0 on
+#light 0 rot y  30.0
+#light 0 rot x -30.0
+
+
+
+#material specification
+material change ambient Opaque 0.310000
+material change diffuse Opaque 0.720000
+material change specular Opaque 0.500000
+material change shininess Opaque 0.480000
+material change opacity Opaque 1.000000
+material change outline Opaque 0.000000
+material change outlinewidth Opaque 0.000000
+material change transmode Opaque 0.000000
+material change specular Opaque 0.750000
+material change ambient   EdgyShiny 0.310000
+material change diffuse   EdgyShiny 0.720000
+material change shininess EdgyShiny 1.0000
+material change opacity   EdgyShiny 0.50
+
+
+
+
+#material change opacity EdgyGlass 0.50
+# Add bond
+addbond 0 0 7
+addbond 0 0 8
+addbond 0 0 9
+#addbond 0 0 48
+#addbond 0 0 49
+#addbond 0 0 50
+#addbond 0 0 95
+#addbond 0 0 96
+#addbond 0 0 97
+label delete Atoms all
+# Load MOs
+set updmol [mol new {156a_a.cub} type cube waitfor all]
+mol addfile {157a_a.cub} type cube waitfor all
+mol addfile {158a_a.cub} type cube waitfor all
+mol addfile {159a_a.cub} type cube waitfor all
+#set updmol [mol new {156a_a.plt} type plt waitfor all]
+#mol addfile {157a_a.plt} type plt waitfor all
+#mol addfile {158a_a.plt} type plt waitfor all
+#mol addfile {159a_a.plt} type plt waitfor all
+
+mol addrep 1
+set updrep [mol repname 1 0]
+mol modselect 1 0 all
+# the isosurface value corresponds to 70% contour
+mol modstyle 0 1 Isosurface 0.05 0 0 0 1 1
+mol modcolor 0 1 ColorID 30
+mol modmaterial 0 1 EdgyShiny
+mol addrep 1
+set updrepp [mol repname 1 1]
+mol modselect 1 0 all
+mol modcolor 1 1 ColorID 23
+# the isosurface value corresponds to 70% contour
+mol modstyle 1 1 Isosurface -0.05 0 0 0 1 1
+mol modmaterial 1 1 EdgyShiny
+
+
+#delete the lines representation
+mol delrep 2 1 
+
+# store name of the isosurface representation (id=3) for later use
+#mol addrep 1
+#set updrepp [mol repname 1 1]
+#mol rename top {Golden Shot}
+
+proc update_iso {args} { 
+    global updmol
+    global updrep
+    global updrepp
+
+    # get representation id and return if invalid
+    set repidd [mol repindex $updmol $updrep]
+    if {$repidd < 0} { return }
+
+    # update representation but replace the data set
+    # id with the current frame number.
+    mol color ColorID 30
+    material change opacity   EdgyShiny 0.50
+    mol modmaterial 0 1 Edgyshiny
+    set fframe [molinfo $updmol get frame]
+    lassign [molinfo $updmol get "{rep $repidd}"] repp
+    mol representation [lreplace $repp 2 2 $fframe]
+    mol modrep $repidd  $updmol
+
+    # get representation id and return if invalid
+    mol color ColorID 23
+    material change opacity   EdgyShiny 0.50
+    mol modmaterial 0 1 EdgyShiny
+    set repid [mol repindex $updmol $updrepp]
+    if {$repid < 0} { return }
+
+    # update representation but replace the data set
+    # id with the current frame number.
+    set frame [molinfo $updmol get frame]
+    lassign [molinfo $updmol get "{rep $repid}"] rep
+    mol representation [lreplace $rep 2 2 $frame]
+    mol modrep $repid $updmol
+}
+
+trace variable vmd_frame($updmol) w update_iso
+animate goto 0
+
+#other info
+#One Step Printing
+#
+#A frequently asked question is ``How can I quickly get a printout of the VMD Display?'' There are several one step solutions to this problem, a few are listed below:
+#Choose the snapshot option and type convert %s eps:%s.ps; lpr %s.ps in the render command box. This assumes that you have the ImageMagick tools available in your PATH setting.
+#As an example of how to directly print a Raster3D file, choose the Raster3D option in the Render form and type render < %s -sgi %s.rgb; convert %s.rgb eps:%s.ps; lpr %s.ps in the render command box.
+#Choose the PostScript output option in the Render form and type lpr %s in the render command box.
+

@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\DeclareMathAlphabet\mathbfcal{OMS}{cmsy}{b}{n}
+
+\title{Free energies from transition path sampling}
+\date{\today}
+\begin{document}
+\maketitle
+%
+\section{Introduction}
+Consider a molecular system evolving in time and snapshots of 
+this system taken at regular intervals of $\Delta t$ for a total time of 
+$\mathcal{T}$. The coordinates and momenta of all the $N$ atoms are defined as
+$\textbf{q}=\{q_1,q_2,q_3,\ldots,q_N\}$ and $\textbf{p}=\{p_1,p_2,p_3,\ldots,p_N\}$, respectively. 
+Complete description of the system at time step $i\Delta t$ is provided by the variable $\mathcal{Z}_{i\Delta t}=\{\mathbf{q}_{i\Delta t},\mathbf{p}_{i\Delta t}\}$ and for the entire time period this can be 
+compactly represented by the time ordered set
+\begin{equation}
+\mathbfcal{Z} = \{\mathcal{Z}_0, \mathcal{Z}_{\Delta t}, \mathcal{Z}_{2\Delta t},
+\ldots,\mathcal{Z}_{\mathcal{T}}\},
+\end{equation}
+which provides a complete description of a dynamical trajectory from time $t=0$ to $t=\mathcal{T}$.
+The reactant and product states are conveniently defined using order parameter $\xi(\textbf{q})$ which 
+depends on the atomic positions $\textbf{q}$. 
+
+\section{Free energy}
+The free energy $(A(\xi))$ as a function of a reaction coordinate $\xi$ is defined as 
+\begin{equation}
+A(\xi) = -k_{\text{B}}T\ln[P(\xi)],
+\end{equation}
+where $P(\xi)$ is the probability distribution of the reaction coordinate $\xi$ 
+in the equilibrium ensemble with the distribution function $\rho(\textbf{q})$
+\begin{equation}
+P(\tilde{\xi}) = \int dV \rho(\textbf{q})\delta[\tilde{\xi}-\xi(\textbf{q})]
+\end{equation}
+Here $dV$ extends over the entire configuration space. In molecular dynamics simulations the 
+distribution functions are approximated by discretized histograms that are calculated by determining 
+how often the reaction coordinate $\xi({\textbf{q}})$ falls within the various histogram bins. 
+
+
+%\section{Path sampling and free energies}
+
+%\section{Preliminary results from WHAM}
+%\begin{figure}
+%\centering
+%\includegraphics[scale=0.8]{figures/free_n_vs_r.pdf}
+%\end{figure}
+
+\section{Procedure to calculate free energies}
+\begin{itemize}
+\item Divide the order parameter variable into 6-10 non-overlapping windows
+\item Run TPS simulations within each window
+\begin{itemize}
+	\item How to do this? Take a parent reactive trajectory that goes from the reactant to product. Define state A and B to be the boundaries of the window. Fix a smaller time within which the dynamics can take the system
+	from A to B or B to A. 
+	\item 75 trajectories per window with 10 windows means 750 trajectories! Thats a large number and automation of the input and submission is necessary.
+	Maybe using python or BASH
+	\end{itemize}
+\item The histograms of each window are obtained by running 75 trajectories per window
+\item The WHAM procedure will be used to invert these histograms and obtain the free energy
+	\end{itemize}
+
+
+\bibliographystyle{unsrt}
+\bibliography{report}
+\end{document}

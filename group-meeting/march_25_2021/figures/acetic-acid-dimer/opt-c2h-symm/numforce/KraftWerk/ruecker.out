@@ -1,0 +1,75 @@
+
+ ruecker (c-18-7) : TURBOMOLE rev. V7.4.1 (b987a8a8) compiled 15 Oct 2019 at 12:03:25
+ Copyright (C) 2019 TURBOMOLE GmbH, Karlsruhe
+
+
+    2020-04-19 14:07:50.117 
+
+
+ symmetry group of the molecule :   c2h
+
+ the group has the following generators :
+   c2(z)
+   mirror plane sigma(xy)
+
+    4 symmetry operations found
+ number of atoms                    16
+ TYPE central IS USED.
+ number of displacements                    96
+ xp01.coord      is written
+ xm01.coord      is written
+ yp01.coord      is written
+ ym01.coord      is written
+ zp01.coord      is written
+ zm01.coord      is written
+ xp02.coord      is written
+ xm02.coord      is written
+ yp02.coord      is written
+ ym02.coord      is written
+ zp02.coord      is written
+ zm02.coord      is written
+ xp03.coord      is written
+ xm03.coord      is written
+ yp03.coord      is written
+ ym03.coord      is written
+ zp03.coord      is written
+ zm03.coord      is written
+ xp05.coord      is written
+ xm05.coord      is written
+ yp05.coord      is written
+ ym05.coord      is written
+ zp05.coord      is written
+ zm05.coord      is written
+ xp06.coord      is written
+ xm06.coord      is written
+ yp06.coord      is written
+ ym06.coord      is written
+ zp06.coord      is written
+ zm06.coord      is written
+ xp07.coord      is written
+ xm07.coord      is written
+ yp07.coord      is written
+ ym07.coord      is written
+ zp07.coord      is written
+ zm07.coord      is written
+ xp08.coord      is written
+ xm08.coord      is written
+ yp08.coord      is written
+ ym08.coord      is written
+ zp08.coord      is written
+ zm08.coord      is written
+ number of displacement is reduced by symmetry;
+ number of symm.-non-redundant displacements:                    42
+ ndisp set to                    42
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time :   0.02 seconds
+         total wall-time :   0.02 seconds
+    ------------------------------------------------------------------------
+
+   ****  ruecker : all done  ****
+
+
+    2020-04-19 14:07:50.127 
+
