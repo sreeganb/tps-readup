@@ -1,0 +1,52 @@
+\listfiles
+\documentclass[notitlepage,preprint,%
+amssymb,amsmath,
+ aip,jcp%
+%groupedaddress,%
+%frontmatterverbose,
+]{revtex4-1}
+%
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{mathptmx}
+\usepackage{bm}%
+\usepackage{bbold}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{tabularx,booktabs}
+\usepackage{color, colortbl}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{subfloat}
+\usepackage{xr}
+%\externaldocument{../rpapol.tex}
+%\definecolor{Gray}{gray}{0.9}
+\captionsetup{justification=raggedright}
+%
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+%\nofiles
+\expandafter\ifx\csname package@font\endcsname\relax\else
+ \expandafter\expandafter
+ \expandafter\usepackage
+ \expandafter\expandafter
+ \expandafter{\csname package@font\endcsname}%
+\fi
+\hyphenation{title}
+%
+\begin{document}
+\title{Human PNP free energies}
+\author{}
+%
+\date{\today}
+\maketitle
+
+%\tableofcontents
+
+\section{Introduction}
+The free energy calculations were performed within the Transition path sampling (TPS) method and 
+
+\bibliographystyle{unsrt}
+\bibliography{report}
+\end{document}
