@@ -1,0 +1,61 @@
+* define mid point
+*
+
+LOWER
+BOMBLEVEL -2
+WRNLEV 10
+PRNLEV 10 NODE 0
+faster
+
+set inp ../../toppar
+set pdb ../pdb
+set fr ../4_neutralize
+
+read rtf card name @inp/top_all36_prot.rtf
+read para card name @inp/par_all36_prot.prm flex
+open unit 10 read card name @inp/top_all36_cgenff.rtf
+read rtf card unit 10 append
+close unit 10
+
+open unit 10 read card name @inp/par_all36_cgenff.prm
+read para card flex unit 10 append
+close unit 10
+stream @inp/toppar_water_ions.str
+stream ../../toppar/plp_a_mod.str 
+stream ../../toppar/plp_b.str
+
+read psf card name ../synthase_no_evp.psf
+
+!****************************define any atoms that are of interest******************************
+define sog sele resname QM .and. (type SOG) end
+define scb sele resname QM .and. (type SCB) end
+!****************************name the output file ******************************
+
+open unit 11 card write name co_cleavage.dat
+
+open read unit 30 file name new.dcd
+
+set frame 1.0
+set step 1.0
+set last 700.
+set a @last
+!****************************make sure the loop parameters are appropriate******************************
+
+label trajloop
+traj iread 30 nunit 1 begin @a stop @a
+traj read
+
+coor axis sele sog end sele scb end
+set d1 ?raxi
+
+decr a by @step
+if @d1 le 1.6 goto next
+if frame ge @step goto trajloop
+!****************************write the output so that it can be used in the perl script******************************
+
+label next
+write title unit 11
+* @a
+*
+
+stop
