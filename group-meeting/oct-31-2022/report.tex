@@ -111,31 +111,72 @@ prb,
 
 %\tableofcontents
 
-\section{\label{sec:level1}Introduction}
-MBHase \cite{Crawshaw2022} 
-
+%\section{\label{sec:level1}Introduction}
+%MBHase \cite{Crawshaw2022} catalyzes the formation of  
 \section{Transition path sampling}
-
 \subsection{TPS ensemble}
-The reaction well is defined through the 
+Figs. \ref{fig:reac61} and \ref{fig:prod61} denote the reactant and product states of the 
+reaction catalyzed by the MBH1.7 variant where a methyl histidine acts as the nucleophile 
+and a catalytic water molecule is present near the O$^{-}$ nucleophile.  
+\begin{figure*}[ht!]
+\centering
+\begin{minipage}[b]{.4\textwidth}
+\includegraphics[scale=0.27]{figures/reac-61.pdf}
+\caption{Geometry of the active site at the reactant state}\label{fig:reac61}
+\end{minipage}\qquad
+\begin{minipage}[b]{.4\textwidth}
+\includegraphics[scale=0.27]{figures/prod-61.pdf}
+\caption{Geometry of the active site at the product state}\label{fig:prod61}
+\end{minipage}
+\end{figure*}
 
 \subsection{Committor analysis}
-
+Committor analysis is carried out to obtain the transition state structure.
+\begin{figure*}[ht!]
+\centering
+\begin{minipage}[b]{.4\textwidth}
+\includegraphics[scale=0.75]{figures/dist46.pdf}
+\caption{Committor analysis for trajectory $\#46$}\label{fig:comm46}
+\end{minipage}\qquad
+\begin{minipage}[b]{.4\textwidth}
+\includegraphics[scale=0.75]{figures/dist54.pdf}
+\caption{Committor analysis for trajectory $\#54$}\label{fig:comm54}
+\end{minipage}
+\end{figure*}
+%
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=1.0]{figures/dist46.pdf}
-\caption{The committor for several time frames}
-\label{fig:comm-dist-46}
+\includegraphics[scale=0.75]{figures/dist61.pdf}
+\label{fig:comm61}
+\caption{Committor analysis for trajectory $\#61$}
 \end{figure}
-
+%
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=1.0]{figures/dist54.pdf}
-\caption{The committor for several time frames for trajectory 54}
-\label{fig:comm-dist-54}
+\includegraphics[scale=0.35]{figures/trans-61.pdf}
+\label{fig:trans61}
+\caption{Transition state for the reaction catalyzed by the MBH1.7 enzyme}
 \end{figure}
-
-\bibliography{report}% Produces the bibliography via BibTeX.
+%
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.35]{figures/exp-ts1.pdf}
+\label{fig:exp-ts1}
+\caption{One of the transition states predicted from DFT calculations for the reaction catalyzed by the MBH1.7 enzyme}
+\end{figure}
+%\begin{figure}[ht!]
+%\centering
+%\includegraphics[scale=1.0]{figures/dist46.pdf}
+%\caption{The committor for several time frames}
+%\label{fig:comm-dist-46}
+%\end{figure}
+%\begin{figure}[ht!]
+%\centering
+%\includegraphics[scale=1.0]{figures/dist54.pdf}
+%\caption{The committor for several time frames for trajectory 54}
+%\label{fig:comm-dist-54}
+%\end{figure}
+%\bibliography{report}% Produces the bibliography via BibTeX.
 
 \end{document}
 
